@@ -1,0 +1,6 @@
+library('MASS')
+library('survey')
+prop.table(table(Smoke))
+prop.table(table(Sex, Smoke))
+prop.table(table(Sex, Smoke), 1)
+prop.table(table(Sex, Smoke), 2)

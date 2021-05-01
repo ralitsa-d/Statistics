@@ -1,0 +1,15 @@
+library("MASS")
+attach('survey')
+m=mean(Height, na.rm=T)
+s=sd(Height, na.rm=T)
+mmale=mean(Height[Sex=='Male'], na.rm=T)
+mfemale=mean(Height[Sex=='Female'], na.rm=T)
+smale=sd(Height[Sex=="Male"], na.rm=T)
+sfemale=sd(Height[Sex=="Female"], na.rm=T)
+p=sum(Height>m-s & Height<m+s, na.rm=T)
+100 * p / sum( !is.na(Height))
+
+#ct = cut( Height, breaks = c(0, m-s, m+s, 200 ))
+#table( ct )
+#prop.table( table(ct) )
+
